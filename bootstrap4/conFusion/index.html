@@ -25,31 +25,36 @@
             <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41" alt="Logo"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span>
+                            Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/aboutus.html"><span class="fa fa-info fa-lg"></span>
+                            About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/contactus.html"><span
+                                class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
             </div>
-    
+
         </div>
     </nav>
 
-    <header class="jumbotron">        
-            <div class="container">
-                <div class="row row-header">
-                    <div class="col-12 col-sm-6">
-                        <h1>Ristorante con Fusion</h1>
-                        <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
-                            lipsmacking creations will tickle your culinary senses!</p>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Ristorante con Fusion</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
+                        lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <div class="col-12 col-sm">
+                    <div class="col-12 align-self-center">
+                        <img src="img/logo.png" class="img-fluid" alt="Logo">
+                        <a class="btn btn-warning" href="#reservation" role="button">Reserve a Table</a>
                     </div>
-                    <div class="col-12 col-sm">
-                        <div class="col-12 col-sm align-self-center">
-                            <img src="img/logo.png" class="img-fluid" alt="Logo">
-                        </div>
-                    </div>
-                </div>                
-            </div>       
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="container">
@@ -61,32 +66,36 @@
                 <div class="media">
                     <img class="d-flex mr-3 img-thumbnail alin-self-center" src="img/uthappizza.png" alt="Uthapizza">
                     <div class="media-body">
-                        <h2 class="mt-0">Uthappizza</h2>
-                        <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza,
+                        <h2 class="mt-0">Uthappizza <span class="badge bg-danger text-white">HOT</span> <span
+                                class="badge badge-pill badge-secondary">$4.99</span></h2>
+                        <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian
+                            pizza,
                             topped with Cerignola olives,
                             ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                     </div>
                 </div>
             </div>
         </div>
-    
-    
+
+
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
             </div>
             <div class="col col-sm col-md">
-                <h2>Weekend Grand Buffet</h2>
-                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads,
-                    six
-                    enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks.
-                    All
-                    for just $19.99 per person </p>
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge bg-danger text-white">New</span></h2>
+                        <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five
+                            different salads,
+                            six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly
+                            and soft drinks.
+                            All for just $19.99 per person </p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail alin-self-center" src="img/buffet.png" alt="Buffet">
+                </div>
             </div>
-    
         </div>
-    
-    
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4  order-sm-last col-md-3">
                 <h3>Meet our Culinary Specialists</h3>
@@ -106,10 +115,78 @@
                 </div>
             </div>
         </div>
+        <div class="row row-content justify-content-center">
+            <div class="col-12 col-sm-8">
+                <div class="card" id="reservation">
+                    <h3 class="card-header bg-primary text-white">Reserve Table</h3>
+                    <div class="card-body">
+                        <div class="col-12 col-md-9">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="numberGuests" class="col-md-4 col-form-label">Number of Guests</label>
+                                    <div class="col-md-8">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="numberGuests"
+                                                id="numberGuests1" value="option1">
+                                            <label class="form-check-label" for="numberGuests1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="numberGuests"
+                                                id="numberGuests2" value="option2">
+                                            <label class="form-check-label" for="numberGuests1">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="numberGuests"
+                                                id="numberGuests3" value="option3">
+                                            <label class="form-check-label" for="numberGuests1">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="numberGuests"
+                                                id="numberGuests4" value="option4">
+                                            <label class="form-check-label" for="numberGuests1">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="numberGuests"
+                                                id="numberGuests5" value="option5">
+                                            <label class="form-check-label" for="numberGuests1">5</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="numberGuests"
+                                                id="numberGuests6" value="option6">
+                                            <label class="form-check-label" for="numberGuests1">6</label>
+                                        </div>
+                                    </div><!-- / col-md-8 -->
+                                </div><!-- / form-group row -->
+                                <div class="from-group row">
+                                    <div class="input-group mb-3">
+                                        <label class="col-sm-4 col-form-label" for="reservationTime">Date and
+                                            Time</label>
+                                        <div class="col-4">
+                                            <input class="form-control" name="reservationTime" type="text"
+                                                placeholder="Date">
+                                        </div><!-- / col-4 -->
+
+                                        <div class="col-4">
+                                            <input class="form-control" name="reservationDate" type="text"
+                                                placeholder="Time">
+                                        </div><!-- / col-4 -->
+                                    </div><!-- / input-group mb-3 -->
+                                </div><!-- / from-group row -->
+                                <div class="from-group row">
+                                    <div class="offset-md-4 col-md-8">
+                                        <button class="btn btn-primary" type="submit">Reserve</button>
+                                    </div><!-- / offset-md-4 col-md-8 -->
+                                </div><!-- / from-group row -->
+                            </form>
+                        </div> <!-- / col-12 col-md-9 -->
+                    </div><!-- / card-body -->
+                </div><!-- / card -->
+            </div><!-- / col-12 col-sm-8 -->
+        </div>
     </div>
     <footer class="footer">
         <div class="container">
-            <div class="row">             
+            <div class="row">
                 <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
@@ -132,26 +209,31 @@
                 </div>
                 <div class="col-12 col-sm-4 align-self-center">
                     <div class="text-center">
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook-f fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-twitte" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i
+                                class="fa fa-google-plus fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+                                class="fa fa-facebook-f fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i
+                                class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitte" href="http://twitter.com/"><i
+                                class="fa fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i
+                                class="fa fa-youtube fa-lg"></i></a>
                         <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope fa-lg"></i></a>
                     </div>
                 </div>
-           </div>
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <p>© Copyright 2018 Ristorante Con Fusion</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                </div>
             </div>
         </div>
-        </div>
     </footer>
-<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
