@@ -35,7 +35,7 @@
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginModalButton">
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -92,10 +92,8 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="card" id="reservation">
-                        <h3 class="card-header bg-primary text-white">Reserve Table</h3>
-                        <div class="card-body">
-                            <div class="col-12 col-md-9">
+                    
+                           
                                 <form>
                                     <div class="form-group row">
                                         <label for="numberGuests" class="col-md-4 col-form-label">Number of Guests</label>
@@ -170,9 +168,8 @@
                                         </div><!-- / offset-md-4 col-md-8 -->
                                     </div><!-- / from-group row -->
                                 </form>
-                            </div> <!-- / col-12 col-md-9 -->
-                        </div><!-- / card-body -->
-                    </div><!-- / card -->
+                          
+                        
                     
                 </div><!-- / modal-body -->
             </div>
@@ -192,7 +189,7 @@
                         <img src="img/logo.png" class="img-fluid" alt="Logo">
                     </div>
                     <div class="col-12 col-sm align-self-center">
-                        <a class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reservationModal">Reserve a Table</a>
+                        <a class="btn btn-block nav-link btn-warning" id="reservationModalButton">Reserve a Table</a>
                     </div>
                 </div>            
         </div>
@@ -451,6 +448,12 @@
             });
             $("#carousel-play").click(function(){
                 $("#mycarousel").carousel('cycle');
+            });
+            $("#loginModalButton").click(function() {
+                $("#loginModal").modal("show");
+            });
+            $("#reservationModalButton").click(function () {
+                $("#reservationModal").modal("show");
             });
         });
     </script>
