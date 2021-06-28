@@ -5,12 +5,6 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
 class Dishdetail extends Component {
   constructor(props) {
     super(props);
-
-    console.log("props: " + props);
-
-    this.state = {
-
-    };
   }
 
   renderDish() {
@@ -33,13 +27,17 @@ class Dishdetail extends Component {
 
     render() {
       return (
-        <div className="col-12 col-md-5 --1">
-          <div className="container">
-            <div className="row">
+        <div className="container">
+          <div className="row">
+          <div className="col-12 col-md-5 m-1">
               {this.renderDish()}
             </div>
           </div>
-        </div>// / col-12 col-md-5 m-1 
+        </div>         
+            
+            
+          
+      
       )
     }
   }

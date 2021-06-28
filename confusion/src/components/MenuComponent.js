@@ -35,14 +35,17 @@ class Menu extends Component {
     });
 
     return (
-      <div className="container">
+      <div>
+         <div className="container">
         <div className="row">
           {menu}
-        </div>
-        
-            <Dishdetail selectedDish={this.state.selectedDish}/>
-         
+        </div>       
       </div>
+      <Dishdetail selectedDish={this.state.selectedDish}/>
+
+
+      </div>
+     
     );
   }
 }
