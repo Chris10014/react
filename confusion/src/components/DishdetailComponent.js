@@ -9,13 +9,13 @@ class Dishdetail extends Component {
     console.log("props: " + props);
 
     this.state = {
-        selectedDishdetail: this.props.dishes
+
     };
   }
 
-  renderDish(dish) {
-      console.log(dish);
-    if (dish != null)
+  renderDish() {
+    const dish = this.props.selectedDish
+    if (dish != null) {
       return (
         <Card>
           <CardImg top src={dish.image} alt={dish.name} />
@@ -25,8 +25,23 @@ class Dishdetail extends Component {
           </CardBody>
         </Card>
       );
-    else return <div></div>;
+    }
+    else {
+        return <div></div>;
+      }
   }
-}
+
+    render() {
+      return (
+        <div className="col-12 col-md-5 --1">
+          <div className="container">
+            <div className="row">
+              {this.renderDish()}
+            </div>
+          </div>
+        </div>// / col-12 col-md-5 m-1 
+      )
+    }
+  }
 
 export default Dishdetail;
