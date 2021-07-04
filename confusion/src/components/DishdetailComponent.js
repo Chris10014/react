@@ -5,7 +5,6 @@ import { Card, CardImg, CardText, CardBody,
 class Dishdetail extends Component {
   
   renderDish(dish) {
-   console.log("from DishdetailComp. renderDish(): " + dish.name);
       return (
              <div className="col-12 col-md-5 m-1">
                <Card>                 
@@ -44,12 +43,13 @@ class Dishdetail extends Component {
   
 
     render() {
-      if(this.props.selectedDish != null) {
+      if(this.props.dish != null) {
+        console.log("from Dishdetail props.dish: " + this.props.dish)
       return (
         <div className="container">
           <div className="row">
-            {this.renderDish(this.props.selectedDish)}
-            {this.renderComments(this.props.selectedDish.comments)}            
+            {this.renderDish(this.props.dish)}
+            {this.renderComments(this.props.dish.comments)}            
           </div>
         </div>
       );
