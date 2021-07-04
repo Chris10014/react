@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Menu from "./MenuComponent";
-import DishDetail from "./DishdetailComponent";
+import Dishdetail from "./DishdetailComponent";
 import { DISHES } from "../shared/dishes";
 
 class Main extends Component {
@@ -16,7 +16,7 @@ class Main extends Component {
   }
 
   onDishSelect(dishId) {
-    console.log("from Main onDishSelect(): " + dishId);
+    // console.log("from Main onDishSelect(): " + dishId);
     this.setState({ selectedDish: dishId });
   }
 
@@ -32,7 +32,7 @@ class Main extends Component {
           dishes={this.state.dishes}
           onClick={(dishId) => this.onDishSelect(dishId)}
         />
-        <DishDetail
+        <Dishdetail
           dish={
             this.state.dishes.filter(
               (dish) => dish.id === this.state.selectedDish
