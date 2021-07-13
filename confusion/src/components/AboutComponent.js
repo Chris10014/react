@@ -13,7 +13,7 @@ function About(props) {
             {/* left middle */}
             <Media body className="ml-5">
               <Media heading>
-                {leader.name} <p>{leader.designation}</p>
+                {leader.name} <p><small>{leader.designation}</small></p>
               </Media>{/* / heading */}
               <p>{leader.description}</p>
             </Media>{/* / body */}
