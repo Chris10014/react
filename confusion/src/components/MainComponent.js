@@ -6,15 +6,11 @@ import DishDetail from "./DishdetailComponent";
 import Home from "./HomeComponent";
 import Contact from "./ContactComponent";
 import About from "./AboutComponent";
-import { DISHES } from "../shared/dishes";
-import { COMMENTS } from "../shared/comments";
-import { PROMOTIONS } from "../shared/promotions";
-import { LEADERS } from "../shared/leaders";
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { //makes the state available as props in the Main Component
   return {
     dishes: state.dishes,
     comments: state.comments,
@@ -27,13 +23,6 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
-    
-    this.state = {
-      dishes: DISHES,
-      comments: COMMENTS,
-      promotions: PROMOTIONS,
-      leaders: LEADERS,
-    };
   }
 
   render() {
@@ -74,4 +63,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main)); // *withRouter* needed to use the react router function; *connect* the component with the store to retreive the state
