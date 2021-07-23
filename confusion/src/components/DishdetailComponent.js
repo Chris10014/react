@@ -43,7 +43,6 @@ import CommentForm from './CommentFormComponent';
 
    const Dishdetail = (props) => {
      if (props.dish != null) {
-       console.log("from Dishdetail props.dish: ", props.dish);
        return (
          <div className="container">
            <div className="row">
