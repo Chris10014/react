@@ -1,108 +1,106 @@
 import React, { Component } from 'react';
-import {Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label} from "reactstrap";
+import {Button, Modal, ModalHeader, ModalBody, Row, Input, Label} from "reactstrap";
+import { Control, LocalForm, Errors } from "react-redux-form";
+
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => !val || val.length <= len;
+const minLength = (len) => (val) => val && val.length >= len;
 
 class CommentForm extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            isModalOpen: false,
-            rating: 1,
-            yourname: "",
-            comment: "",
-            touched: {
-              yourname: false
-            }
-          };
-
-        this.toggleModal = this.toggleModal.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
+    this.state = {
+      isModalOpen: false,
     }
 
-    toggleModal() {
-        this.setState({
-          isModalOpen: !this.state.isModalOpen,
-        });
-      }
+    this.toggleModal = this.toggleModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-    
-        this.setState({
-          [name]: value,
-        });
-    }
-      
+  toggleModal() {
+    this.setState({
+      isModalOpen: !this.state.isModalOpen,
+    });
+  }
 
-render() {
+  handleSubmit(values) {
+    console.log("Current State is: " + JSON.stringify(values));
+    alert("Current State is: " + JSON.stringify(values));
+  }
 
-
-
-
+  render() {
     return (
-        <div className="row">
-            <Button outline onClick={this.toggleModal}>
-                  <span className="fa fa-pencil fa-lg"></span> Submit Comment
-            </Button>
+      <div className="row">
+        <Button outline onClick={this.toggleModal}>
+          <span className="fa fa-pencil fa-lg"></span> Submit Comment
+        </Button>
 
-            <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-            <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
-            <ModalBody>
-            <Form onSubmit={this.handleLogin}>
-              <FormGroup>
+        <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+          <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+          <ModalBody>
+            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+              <Row className="form-group">
                 <Label htmlFor="rating">Rating</Label>
-                <Input
-                    type="select"
-                    name="rating"
-                    value={this.state.rating}
-                    onChange={this.handleInputChange}
-                  >
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Input>
-              </FormGroup>
-              <FormGroup>
+                <Control.select
+                  model=".rating"
+                  name="rating"
+                  className="form-control"
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </Control.select>
+              </Row>
+              <Row className="form-group">
                 <Label htmlFor="yourname">Your Name</Label>
-                <Input
-                  type="text"
+                <Control.text
+                  model=".yourname"
                   id="yourname"
                   name="yourname"
                   placeholder="Your Name"
-                  innerRef={(input) => (this.yourname = input)}
+                  className="form-control"
+                validators={{
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15),
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".yourname"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      minLength: "Must be greater than 2 characters",
+                      maxLength: "Must be 15 characters or less",
+                    }}
+                  />
+              </Row>
+              <Row className="form-group">
+                <Label htmlFor="comment">Comment</Label>
+                <Control.textarea
+                  model=".comment"
+                  id="comment"
+                  name="comment"
+                  rows="6"
+                  className="form-control"
                 />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="comment">
-                  Comment
-                </Label>
-                  <Input
-                    type="textarea"
-                    id="comment"
-                    name="comment"
-                    rows="6"
-                    value={this.state.comment}
-                    onChange={this.handleInputChange}
-                  ></Input>
-              </FormGroup>
-              
-              <Button type="submit" value="submit" color="primary"> Submit</Button>
-            </Form>
-
-            </ModalBody>
-            </Modal>
-
-        </div>
-
-   
-
+              </Row>
+              <Row className="form-group">
+                <Button type="submit" value="submit" color="primary">
+                  {" "}
+                  Submit
+                </Button>
+              </Row>
+            </LocalForm>
+          </ModalBody>
+        </Modal>
+      </div>
     );
-}
-
+  }
 }
 
 export default CommentForm;
