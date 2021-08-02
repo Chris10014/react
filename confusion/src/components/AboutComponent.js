@@ -2,8 +2,10 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
+import { Loading } from './LoadingComponent';
+import { Fade, Stagger } from "react-animation-components";
 
-function About(props) {
+
 
     function RenderLeader({leader}) {
         return (
@@ -20,14 +22,44 @@ function About(props) {
             </Media>{/* / body */}
           </Media>
         );
-
     }
 
-    const leaders = props.leaders.leaders.map((leader) => {
-        return (
-            <RenderLeader leader={leader} />
-        );
-    });
+    function LeaderList(props) {
+        
+        const leaders = props.leaders.leaders.map((leader) => {
+            return (
+                <Fade in key={leader._id}>
+                    <div className="col-12 mt-2">
+                            <RenderLeader leader={leader} />
+                    </div>
+                </Fade>
+            );
+        });
+    
+        if (props.leaders.isLoading) {
+            return(
+                    <Loading />
+            );
+        }
+        else if (props.leaders.errMess) {
+            return(
+                <div className="col-12"> 
+                    <h4>{props.leaders.errMess}</h4>
+                </div>
+            );
+        }
+        else {
+            return (
+                <Media list>
+                    <Stagger in>
+                        {leaders}
+                    </Stagger>
+                </Media>
+            );
+        }
+    }
+
+function About(props) {
 
     return(
         <div className="container">
@@ -85,7 +117,9 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <Media list>
-                        {leaders}
+                        <Stagger in>
+                        <LeaderList leaders={props.leaders} />
+                        </Stagger>
                     </Media>
                 </div>
             </div>
